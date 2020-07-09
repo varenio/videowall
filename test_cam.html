@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es" style="height: 100%;">
+ 
+<body style="padding: 0; margin: 0;height: 100%">
+    <iframe id="iframeid" style="width:100%;height:100%" src="http://mct.gencat.cat/mct2bo/RenderService?sctidcam=nc3.jpg" title="Càmera de trànsit"></iframe>
+ 
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id_cam = urlParams.get('id')
+    function myFunction() {
+        myVar = setInterval(actualitza, 60000);
+    }
+    function actualitza(){
+        document.getElementById('iframeid').src = 'http://mct.gencat.cat/mct2bo/RenderService?sctidcam='+id_cam+'.jpg'; 
+    }
+     
+    myFunction();
+ 
+</script>
+</body>
+</html>
